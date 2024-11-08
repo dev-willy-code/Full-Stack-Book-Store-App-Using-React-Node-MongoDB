@@ -1,0 +1,255 @@
+Comandos Básicos en Node.js y Terminal
+----------------------------------------------
+node --version: Muestra la versión de Node.js instalada en tu máquina.
+clear: Limpia la consola de la terminal.
+code: Abre Visual Studio Code desde la terminal, si estás en la carpeta de un proyecto.
+
+Vite
+----------------------------------------------
+Vite es una herramienta moderna de desarrollo web que actúa como un bundler y entorno de desarrollo rápido. Diseñado para ofrecer tiempos de arranque casi instantáneos y recargas rápidas en caliente (hot reload), es ideal para aplicaciones modernas de JavaScript. A diferencia de los frameworks como Next.js, Vite no impone una estructura estricta de carpetas, brindando una mayor flexibilidad.
+npm create vite@latest ./: Inicia un nuevo proyecto de Vite en la carpeta actual (./). No creará una subcarpeta nueva.
+
+npm install o npm i: Instala todas las dependencias listadas en package.json.
+npm run dev: Ejecuta el entorno de desarrollo, lanzando el servidor local con recarga en caliente.
+Características Principales
+Vite se basa en módulos ES para mejorar el rendimiento.
+Incluye optimización automática para la producción y es muy flexible para configuraciones personalizadas.
+
+Tailwind CSS
+----------------------------------------------
+Tailwind CSS es un framework de utilidades CSS que permite definir estilos de manera rápida y modular. Es compatible con personalización avanzada y componentes reutilizables.
+
+Instalación:
+
+bash
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+La opción -D significa instalar las dependencias como dependencias de desarrollo.
+Configuración:
+
+Tailwind CSS se puede configurar para definir colores personalizados, fuentes, y otros estilos propios. Es ideal para construir un sistema de diseño adaptable a necesidades específicas.
+Google Fonts:
+
+Si deseas usar una fuente de Google, como Montserrat, puedes importarla en tu CSS o HTML principal y luego definirla en la configuración de Tailwind para una aplicación coherente.
+React Router DOM
+npm i react-router-dom: Instala React Router para manejar rutas dentro de aplicaciones de React.
+Outlet: Este componente actúa como un layout o diseño básico para anidar rutas. Es decir, permite que un componente principal tenga otras rutas dentro de él.
+StrictMode en React
+StrictMode es una herramienta que se usa en React para detectar errores potenciales y seguir las mejores prácticas de desarrollo. Solo afecta al entorno de desarrollo y no impacta el rendimiento de la aplicación en producción.
+
+Pseudoelemento
+Para que el pseudoelemento :after funcione, debes definir la propiedad content. Sin content, el pseudoelemento no es visible y su uso es redundante. Esto es útil para insertar contenido o decoraciones después de un elemento específico.
+
+Librerías de Utilidad en React
+react-icons: Proporciona iconos listos para usar en componentes React.
+
+Instalación: npm i react-icons
+swiper: Ideal para crear carruseles de imágenes o contenido.
+
+Instalación: npm install swiper
+
+react-hook-form: Librería para la gestión de formularios en React.
+Instalación: npm i react-hook-form
+
+@reduxjs/toolkit: Toolkit para gestionar el estado global de la aplicación mediante Redux.
+Instalación: npm install @reduxjs/toolkit
+
+sweetalert2: Muestra alertas atractivas y personalizables.
+Instalación: npm install sweetalert2
+
+Backend en Node.js
+Comandos Básicos
+Instalar dependencias:
+bash
+Copiar código
+npm i  # Para instalar dependencias listadas en package.json
+npm i -y  # Instala automáticamente con configuraciones predeterminadas
+
+Express:
+npm i express: Instala el framework Express para crear aplicaciones y APIs.
+node index.js: Ejecuta el archivo index.js en Node.js.
+
+Nodemon:
+npm i -g nodemon: Instala nodemon globalmente, para reiniciar automáticamente el servidor cuando haya cambios.
+npm i --save-dev nodemon: Instala nodemon como dependencia de desarrollo.
+Autenticación y Seguridad
+Mongoose:
+
+npm i mongoose: Instala Mongoose para gestionar MongoDB con esquemas y modelos de datos.
+dotenv:
+
+npm i dotenv: Carga variables de entorno desde un archivo .env en la aplicación de Node.js.
+cors:
+
+npm i cors: cors es una herramienta que permite que tu API sea accesible desde otros dominios. Esto es importante para acceder a recursos desde aplicaciones externas, como apps web o móviles.
+Firebase
+Firebase proporciona servicios en la nube, como autenticación de usuarios y almacenamiento de datos en tiempo real. Es una opción popular para la autenticación y permite crear un perfil de usuario usando su uid como identificador único. Es comparable a AWS en términos de servicios en la nube.
+
+Instalación: npm install firebase
+
+Wrappers y Layouts en React
+Wrapper: Encapsula lógica, como la verificación de autenticación en PrivateRoutes, o la gestión de estados de carga.
+Layout: Organiza visualmente elementos en la interfaz de usuario. Incluye encabezados, menús y áreas de contenido.
+useNavigate y Link en React
+useNavigate: Permite realizar redirecciones programáticas dentro de componentes funcionales sin recargar la página. Útil para redirigir después de acciones específicas, como un formulario exitoso.
+<Link>: Úsalo para crear enlaces directos a rutas específicas en la aplicación. Ideal para menús o navegación estática.
+RTK Query en Redux Toolkit
+RTK Query facilita la gestión de datos en aplicaciones que utilizan APIs, permitiendo automatizar el manejo de caché, la revalidación de datos, y los estados de consultas (cargando, éxito, error).
+
+Características Clave:
+
+Gestión de Estado: Controla automáticamente el estado de las consultas.
+Caché y Revalidación: Almacena respuestas en caché y revalida automáticamente los datos.
+Mutaciones Sencillas: Implementa mutaciones como crear, actualizar y eliminar con una sintaxis sencilla.
+API Intuitiva: Reduce la complejidad en la gestión de datos.
+Hooks Personalizados en React
+Un hook personalizado se usa cuando tienes lógica repetitiva en varios componentes. También es útil para manejar estados complejos y mejorar la legibilidad de los componentes.
+
+Mongoose y Middleware en Express
+Populate: Permite obtener datos completos a partir de una referencia (ID) en un esquema de Mongoose, ideal para relaciones entre colecciones.
+Middleware en Express: Los middlewares en Express ejecutan código antes de alcanzar el controlador final. Usando next(), controlas si el middleware continúa o detiene el flujo.
+next(err): Al pasar un argumento a next, se asume que es un error.
+Autenticación con JSON Web Tokens (JWT) y Bcrypt
+bcrypt: Usado para cifrar contraseñas.
+Instalación: npm i bcrypt
+jsonwebtoken: Para generar y verificar tokens de autenticación.
+Instalación: npm i jsonwebtoken
+Manejo de Formularios y Autenticación con Firebase
+npm install firebase
+localStorage: Puedes almacenar un token de autenticación en el localStorage y luego recuperarlo para realizar peticiones autenticadas.
+
+
+const token = localStorage.getItem('token');
+if (token) {
+  Headers.set('Authorization', `Bearer ${token}`);
+}
+
+
+Formulario con HTML:
+
+action: URL a la que se enviará el formulario.
+method: Define si el envío es GET o POST.
+Es recomendable manejar formularios en React con onSubmit y onChange en lugar de action y method, para mayor flexibilidad y control sobre los datos.
+Resumen de Requisitos Básicos en las Solicitudes HTTP
+req.params: Información de la ruta de acceso (por ejemplo, /users/:id donde id es req.params.id).
+req.query: Parámetros adicionales en la URL, útiles para filtros y opciones (ejemplo, /users?id=123 donde id es req.query.id).
+req.body: Datos enviados en una solicitud POST o PUT, típicamente usado en formularios.
+
+para hacer buscador tiempo real puedes hacer useeffect y entre []
+colocar query que se actualize por el  onchange() 
+
+simpre dentro del useeffect colocar fecth o similar
+
+
+useContext en React
+-----------------------------------------------------
+useContext es un hook de React que permite compartir datos entre componentes sin necesidad de pasar "props" manualmente en cada nivel. Funciona como una especie de "global state" para valores que necesitas en varias partes de la aplicación, como la autenticación de usuario o temas de la interfaz.
+
+Ejemplo básico:
+
+Crea un contexto: const MyContext = React.createContext();
+Usa MyContext.Provider para definir el valor a compartir.
+Usa useContext(MyContext) en un componente para acceder al valor del contexto.
+
+Diferencias entre localStorage y Cookies
+----------------------------------------------------------------------
+localStorage:
+Tamaño máximo: ~5MB.
+Datos accesibles únicamente desde el cliente.
+Se usa para almacenar datos de manera persistente.
+Los datos persisten hasta que el usuario los borre manualmente.
+Cookies:
+Tamaño máximo: ~4KB.
+Usadas principalmente para almacenar información de sesiones y seguimiento en el servidor.
+Pueden ser accesibles tanto por el servidor como por el cliente.
+Se puede configurar su tiempo de expiración.
+Uso: localStorage es ideal para datos de usuario o configuración en el cliente, mientras que las cookies son ideales para gestionar sesiones y autenticación.
+
+GitHub y GitFlow
+------------------------------------------------
+GitHub: Plataforma para almacenar repositorios de código usando Git, que permite colaboración, control de versiones y revisión de cambios.
+
+GitFlow: Una estrategia para trabajar en Git, útil en proyectos colaborativos. Consiste en:
+
+Ramas principales: main (producción) y develop (desarrollo).
+Ramas de soporte:
+feature: para nuevas características.
+release: para preparar versiones.
+hotfix: para corregir errores en producción rápidamente.
+Beneficio: Permite organizar el trabajo en equipo de forma clara y controlada.
+
+Funciones Flecha ()=>
+-----------------------------------------------------
+En JavaScript, las funciones flecha (()=>) son una sintaxis corta para definir funciones anónimas. Se utilizan comúnmente en funciones de callback.
+
+Ejemplo:
+
+javascript
+Copiar código
+const sum = (a, b) => a + b;
+Características:
+
+No tienen su propio this (lo heredan del contexto en el que están definidas).
+Sintaxis más corta y limpia.
+Operador de Expansión ... (Spread Syntax)
+El operador ... se usa para expandir elementos de un arreglo u objeto en situaciones donde se espera una lista de elementos.
+
+Ejemplos:
+
+Copiar un arreglo:
+javascript
+Copiar código
+const arr = [1, 2, 3];
+const newArr = [...arr, 4]; // [1, 2, 3, 4]
+Pasar elementos de un arreglo como argumentos:
+javascript
+Copiar código
+const sum = (a, b, c) => a + b + c;
+const nums = [1, 2, 3];
+sum(...nums); // 6
+Uso en objetos: También permite combinar objetos o añadir nuevas propiedades de manera concisa.
+
+npm i axios // alternativa a fetch y a rtk.query, mas legible, 
+
+npm install jwt-decode //para decodificar token, no verifca autenticidad, solo decodifica, para frontend
+
+
+ no es necesario incluir method: 'GET' en las consultas, ya que RTK Query lo asume por defecto
+
+ const response = await fetch('https://your-api-url.com/api/books/create-book', {
+                method: 'POST', // Método de la solicitud
+                headers: {
+                    'Content-Type': 'application/json', // Indicar el tipo de contenido
+                },
+                body: JSON.stringify(formData), // Convertir datos a formato JSON
+
+
+no necesitas incluir los headers para cookies como lo haces con localStorage.
+Sin embargo, las cookies pueden ser configuradas para ser más seguras y con atributos como HttpOnly o Secure, mientras que localStorage no tiene tales atributos de seguridad.
+
+redux-persist, no necesitas realizar verificaciones manuales de token en cada carga de página, y la experiencia de usuario se mantiene fluida.
+
+
+
+
+"Al realizar un logout, se puede agregar el token a una lista negra para asegurarse de que no se pueda reutilizar. En los middlewares o wrappers que verifican el acceso a rutas protegidas, en lugar de usar la variable currentUser (que puede ser manipulada en el cliente), se puede validar el token en la base de datos. Esto asegura que el token es válido y no ha sido invalidado o expirado.
+
+El uso de currentUser sigue siendo útil para mantener el estado en el frontend, como mostrar el perfil o acceder a información del usuario en distintas partes de la aplicación sin tener que hacer peticiones al backend cada vez. Sin embargo, para la autenticación y la validación de rutas protegidas, es más seguro verificar el token directamente en el backend, especialmente con una lista negra de tokens para invalidarlos en el momento de hacer logout."
+
+useEffect se ejecutará solo una vez al montar el componente
+por eso: const { data: books, refetch } = useFetchAllBooksQuery() 
+aca hay refwecth para no usar useEffect
+
+EJm:
+useEffect(() => {
+    if (bookData) {
+        setValue('title', bookData.title);            // Rellena el campo de título con el título actual del libro.
+        setValue('description', bookData.description); // Rellena el campo de descripción con la descripción actual del libro.
+        setValue('category', bookData?.category);      // Rellena el campo de categoría con la categoría actual del libro.
+        setValue('trending', bookData.trending);       // Rellena el campo de "trending" con el estado actual (booleano).
+        setValue('oldPrice', bookData.oldPrice);       // Rellena el campo de precio antiguo con el precio actual antiguo del libro.
+        setValue('newPrice', bookData.newPrice);       // Rellena el campo de precio nuevo con el precio actual nuevo del libro.
+        setValue('coverImage', bookData.coverImage);   // Rellena el campo de imagen de portada con la URL de la imagen actual del libro.
+    }
+}, [bookData, setValue]); //estos valores se actualizan en todo el compente si cambian, por eso es useeffect

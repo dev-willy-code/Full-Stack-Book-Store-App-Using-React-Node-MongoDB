@@ -1,0 +1,70 @@
+
+
+//Este hook usePerritos va a hacer una llamada a una API y te va a devolver la lista de perritos, un indicador de carga y posibles errores.
+// usePerritos.js
+import { useState, useEffect } from 'react';
+
+const usePerritos = () => {
+    const [perritos, setPerritos] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        // Simulación de la URL de una API que devuelve perritos
+        const fetchPerritos = async () => {
+            try {
+                const response = await fetch('https://api.example.com/perritos');
+                if (!response.ok) {
+                    throw new Error('Error fetching data');
+                }
+                const data = await response.json();
+                setPerritos(data);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchPerritos();
+    }, []); // Dependencias vacías para que solo se ejecute una vez al montarse el componente
+
+    return { perritos, isLoading, error };
+};
+
+export default usePerritos;
+
+
+
+
+
+
+
+
+// PerritosList.js
+import React from 'react';
+import usePerritos from './usePerritos';
+
+const PerritosList = () => {
+    const { perritos, isLoading, error } = usePerritos();
+
+    if (isLoading) return <p>Cargando perritos...</p>;
+    if (error) return <p>Error: {error}</p>;
+
+    return (
+        <div>
+            <h1>Lista de Perritos</h1>
+            <ul>
+                {perritos.map((perrito) => (
+                    <li key={perrito.id}>{perrito.nombre}</li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default PerritosList;
+//El useEffect realiza la llamada a la API cuando el componente se monta.
+
+
+En resumen, si estás usando RTK Query, no necesitas crear hooks personalizados para la lógica de obtención de datos; RTK Query ya gestiona esa lógica de manera eficaz y concisa.

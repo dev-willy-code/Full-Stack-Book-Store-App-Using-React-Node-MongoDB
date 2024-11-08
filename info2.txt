@@ -1,0 +1,39 @@
+//version anterior sin redux persist
+//se tenia que validar token a cada rato
+//mejor es tener currentUser en redux
+
+import { Navigate } from 'react-router-dom';
+
+export default async function AdminRoutes({ children }) {
+    const token = localStorage.getItem('token');
+
+    // Si no hay token, redirige a la página de inicio de sesión
+    if (!token) return <Navigate to="/admin" />;
+
+    try {
+        // Realizar una solicitud al backend para verificar la validez del token
+        const response = await fetch(`${getBaseUrl()}/api/verifyToken`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        });
+
+        const isValid = await response.json();
+
+        // Si el token no es válido o el usuario no es administrador, redirige
+        if (!isValid) {
+            localStorage.removeItem('token');
+            return <Navigate to="/admin" />;
+        }
+
+        // Si el token es válido, renderiza el contenido
+        return children;
+    } catch (error) {
+        // Error en la solicitud o token inválido
+        console.error("Error al verificar el token", error);
+        localStorage.removeItem('token');
+        return <Navigate to="/admin" />;
+    }
+}

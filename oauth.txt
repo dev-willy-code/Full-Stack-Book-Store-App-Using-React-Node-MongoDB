@@ -1,0 +1,3 @@
+OAuth 2.0 es el protocolo de autorización en sí mismo.
+Auth0 es una plataforma que utiliza OAuth 2.0 (entre otros) para ofrecerte una solución completa de identidad.
+Okta compró Auth0, pero cada uno sigue ofreciendo soluciones de identidad que se enfocan en diferentes mercados y necesidades.
